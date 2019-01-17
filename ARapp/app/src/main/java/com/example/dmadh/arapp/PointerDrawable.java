@@ -1,11 +1,13 @@
 package com.example.dmadh.arapp;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 public class PointerDrawable extends Drawable {
 
@@ -38,11 +40,12 @@ public class PointerDrawable extends Drawable {
     }
 
     @Override
-    public void setColorFilter(@androidx.annotation.Nullable ColorFilter colorFilter) {
+    public void setColorFilter(ColorFilter colorFilter) {
 
     }
 
 
+    @SuppressLint("WrongConstant")
     @Override
     public int getOpacity() {
         return 0;
