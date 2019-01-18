@@ -10,17 +10,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 public class PointerDrawable extends Drawable {
-
     private final Paint paint = new Paint();
     private boolean enabled;
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
     @Override
     public void draw(@NonNull Canvas canvas) {
         float cx = canvas.getWidth()/2;
@@ -28,26 +19,32 @@ public class PointerDrawable extends Drawable {
         if (enabled) {
             paint.setColor(Color.GREEN);
             canvas.drawCircle(cx, cy, 10, paint);
-        } else {
+        }else {
             paint.setColor(Color.GRAY);
             canvas.drawText("X", cx, cy, paint);
         }
     }
 
     @Override
-    public void setAlpha(int alpha) {
+    public void setAlpha(int i) {
 
     }
 
     @Override
-    public void setColorFilter(ColorFilter colorFilter) {
+    public void setColorFilter(@Nullable ColorFilter colorFilter) {
 
     }
-
 
     @SuppressLint("WrongConstant")
     @Override
     public int getOpacity() {
         return 0;
+    }
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
