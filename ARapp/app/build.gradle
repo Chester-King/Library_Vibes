@@ -56,3 +56,8 @@ sceneform.asset('sampledata/models/igloo.obj',
         'default',
         'sampledata/models/igloo.sfa',
         'src/main/assets/igloo')
+
+sceneform.asset('sampledata/models/CHAHIN_WOODEN_CHAIR.obj',
+        'default',
+        'sampledata/models/CHAHIN_WOODEN_CHAIR.sfa',
+        'src/main/assets/CHAHIN_WOODEN_CHAIR')

@@ -247,6 +247,12 @@ public class MainActivity extends AppCompatActivity {
         igloo.setContentDescription("igloo");
         igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));});
         gallery.addView(igloo);
+
+        ImageView chair = new ImageView(this);
+        andy.setImageResource(R.drawable.chair_thumb);
+        andy.setContentDescription("Chair");
+        andy.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
+        gallery.addView(chair);
     }
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();
