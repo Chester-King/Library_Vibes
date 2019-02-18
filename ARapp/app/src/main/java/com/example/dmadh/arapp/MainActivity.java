@@ -253,6 +253,18 @@ public class MainActivity extends AppCompatActivity {
         andy.setContentDescription("Chair");
         andy.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
         gallery.addView(chair);
+
+        ImageView washing_machine = new ImageView(this);
+        andy.setImageResource(R.drawable.washing_machine_thumb);
+        andy.setContentDescription("Washing Machine");
+        andy.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
+        gallery.addView(washing_machine);
+
+        ImageView laptop = new ImageView(this);
+        andy.setImageResource(R.drawable.thumb_laptop);
+        andy.setContentDescription("laptop");
+        andy.setOnClickListener(view ->{addObject( Uri.parse("Laptop_01.sfb"));});
+        gallery.addView(laptop);
     }
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();
