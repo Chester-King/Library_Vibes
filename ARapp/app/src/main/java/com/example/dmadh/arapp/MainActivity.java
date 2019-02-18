@@ -249,22 +249,38 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(igloo);
 
         ImageView chair = new ImageView(this);
-        andy.setImageResource(R.drawable.chair_thumb);
-        andy.setContentDescription("Chair");
-        andy.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
+        chair.setImageResource(R.drawable.chair_thumb);
+        chair.setContentDescription("Chair");
+        chair.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
         gallery.addView(chair);
 
         ImageView washing_machine = new ImageView(this);
-        andy.setImageResource(R.drawable.washing_machine_thumb);
-        andy.setContentDescription("Washing Machine");
-        andy.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
+        washing_machine.setImageResource(R.drawable.washing_machine_thumb);
+        washing_machine.setContentDescription("Washing Machine");
+        washing_machine.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
         gallery.addView(washing_machine);
 
         ImageView laptop = new ImageView(this);
-        andy.setImageResource(R.drawable.thumb_laptop);
-        andy.setContentDescription("laptop");
-        andy.setOnClickListener(view ->{addObject( Uri.parse("Laptop_01.sfb"));});
+        laptop.setImageResource(R.drawable.thumb_laptop);
+        laptop.setContentDescription("laptop");
+        laptop.setOnClickListener(view ->{addObject( Uri.parse("Laptop_0156.sfb"));});
         gallery.addView(laptop);
+
+        ImageView computer = new ImageView(this);
+        computer.setImageResource(R.drawable.computer_thumb);
+        computer.setContentDescription("Computer");
+        computer.setOnClickListener(view ->{addObject( Uri.parse("Computers.sfb"));});
+        gallery.addView(computer);
+
+        ImageView keyboard = new ImageView(this);
+        keyboard.setImageResource(R.drawable.computer_thumb);
+        keyboard.setContentDescription("Keyboard");
+        keyboard.setOnClickListener(view ->{addObject( Uri.parse("Keyboard.sfb"));});
+        gallery.addView(keyboard);
+
+
+
+
     }
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();

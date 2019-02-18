@@ -71,3 +71,13 @@ sceneform.asset('sampledata/models/Laptop_01.obj',
         'default',
         'sampledata/models/Laptop_01.sfa',
         'src/main/assets/Laptop_01')
+
+sceneform.asset('sampledata/models/Computer.obj',
+        'default',
+        'sampledata/models/Computer.sfa',
+        'src/main/assets/Computer')
+
+sceneform.asset('sampledata/models/Keyboard.obj',
+        'default',
+        'sampledata/models/Keyboard.sfa',
+        'src/main/assets/Keyboard')
