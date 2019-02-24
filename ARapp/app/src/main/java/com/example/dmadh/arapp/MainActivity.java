@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
@@ -15,7 +14,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.PixelCopy;
-import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,10 +29,8 @@ import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
-import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.Renderable;
-import com.google.ar.sceneform.rendering.Renderer;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
@@ -42,7 +38,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -62,16 +57,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                takePhoto();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                takePhoto();
+//            }
+//        });
         fragment = (ArFragment)
                 getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment);
-        fragment.getArSceneView().getScene().setOnUpdateListener(frameTime -> {
+        fragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
             fragment.onUpdate(frameTime);
             onUpdate();
         });
@@ -255,28 +250,16 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(chair);
 
         ImageView washing_machine = new ImageView(this);
-        washing_machine.setImageResource(R.drawable.washing_machine_thumb);
+        washing_machine.setImageResource(R.drawable.washingmachine_thumb);
         washing_machine.setContentDescription("Washing Machine");
         washing_machine.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
         gallery.addView(washing_machine);
 
         ImageView laptop = new ImageView(this);
-        laptop.setImageResource(R.drawable.thumb_laptop);
+        laptop.setImageResource(R.drawable.laptop_thumb);
         laptop.setContentDescription("laptop");
-        laptop.setOnClickListener(view ->{addObject( Uri.parse("Laptop_0156.sfb"));});
+        laptop.setOnClickListener(view ->{addObject( Uri.parse("Laptop.sfb"));});
         gallery.addView(laptop);
-
-        ImageView computer = new ImageView(this);
-        computer.setImageResource(R.drawable.computer_thumb);
-        computer.setContentDescription("Computer");
-        computer.setOnClickListener(view ->{addObject( Uri.parse("Computers.sfb"));});
-        gallery.addView(computer);
-
-        ImageView keyboard = new ImageView(this);
-        keyboard.setImageResource(R.drawable.computer_thumb);
-        keyboard.setContentDescription("Keyboard");
-        keyboard.setOnClickListener(view ->{addObject( Uri.parse("Keyboard.sfb"));});
-        gallery.addView(keyboard);
 
 
 
