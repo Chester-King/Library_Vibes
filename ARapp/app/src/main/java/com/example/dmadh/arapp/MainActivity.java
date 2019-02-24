@@ -1,4 +1,5 @@
 package com.example.dmadh.arapp;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -49,21 +50,19 @@ public class MainActivity extends AppCompatActivity {
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
     private boolean isHitting;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                takePhoto();
-//            }
-//        });
+        /*Bundle bundle = getIntent().getExtras();
+        if (bundle != null && bundle.getString("uri") != null) {
+            //            Uri uri = Uri.parse(bundle.getString("uri"));
+            addObject(Uri.parse(bundle.getString("uri")));
+        }*/
+
         fragment = (ArFragment)
                 getSupportFragmentManager().findFragmentById(R.id.sceneform_fragment);
         fragment.getArSceneView().getScene().addOnUpdateListener(frameTime -> {
@@ -71,7 +70,17 @@ public class MainActivity extends AppCompatActivity {
             onUpdate();
         });
 
-        initializeGallery();
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null && bundle.getString("uri") != null) {
+            //            Uri uri = Uri.parse(bundle.getString("uri"));
+            addObject(Uri.parse(bundle.getString("uri")));
+        }
+
+//        initializeGallery();
+
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, ProductsActivity.class)));
+
     }
 
     private String generateFilename() {
@@ -164,12 +173,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private boolean updateTracking() {
         Frame frame = fragment.getArSceneView().getArFrame();
         boolean wasTracking = isTracking;
         isTracking = frame.getCamera().getTrackingState() == TrackingState.TRACKING;
         return isTracking != wasTracking;
     }
+
     private boolean updateHitTest() {
         Frame frame = fragment.getArSceneView().getArFrame();
         android.graphics.Point pt = getScreenCenter();
@@ -216,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    private void initializeGallery() {
+    /*private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         ImageView andy = new ImageView(this);
@@ -264,7 +275,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
+
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();
         Point pt = getScreenCenter();
@@ -282,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
         CompletableFuture<Void> renderableFuture =
                 ModelRenderable.builder()
