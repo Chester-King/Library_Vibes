@@ -81,3 +81,29 @@ sceneform.asset('sampledata/models/Keyboard.obj',
         'default',
         'sampledata/models/Keyboard.sfa',
         'src/main/assets/Keyboard')
+
+
+sceneform.asset('sampledata/models/Bed_01.obj',
+        'default',
+        'sampledata/models/Bed_01.sfa',
+        'src/main/assets/Bed')
+
+sceneform.asset('sampledata/models/Couch.obj',
+        'default',
+        'sampledata/models/Couch.sfa',
+        'src/main/assets/Couch')
+
+sceneform.asset('sampledata/models/Refrigerator_01.obj',
+        'default',
+        'sampledata/models/Refrigerator_01.sfa',
+        'src/main/assets/Refrigerator')
+
+sceneform.asset('sampledata/models/Sofa_01.obj',
+        'default',
+        'sampledata/models/Sofa_01.sfa',
+        'src/main/assets/Sofa')
+
+sceneform.asset('sampledata/models/TV_01.obj',
+        'default',
+        'sampledata/models/TV_01.sfa',
+        'src/main/assets/TV')

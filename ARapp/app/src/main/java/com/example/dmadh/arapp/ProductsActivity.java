@@ -75,6 +75,13 @@ public class ProductsActivity extends AppCompatActivity {
             sendUri(Uri.parse("Laptop.sfb"));
         });
         gallery.addView(laptop);
+
+
+
+
+
+
+
     }
 
     private void sendUri(Uri uri) {
