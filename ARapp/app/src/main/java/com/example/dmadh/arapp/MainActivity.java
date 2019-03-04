@@ -219,11 +219,31 @@ public class MainActivity extends AppCompatActivity {
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
-        ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.droid_thumb);
-        andy.setContentDescription("andy");
-        andy.setOnClickListener(view ->{addObject( Uri.parse("andy.sfb"));});
-        gallery.addView(andy);
+
+        ImageView chair = new ImageView(this);
+        chair.setImageResource(R.drawable.chair_thumb);
+        chair.setContentDescription("Chair");
+        chair.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
+        gallery.addView(chair);
+
+        ImageView washing_machine = new ImageView(this);
+        washing_machine.setImageResource(R.drawable.washingmachine_thumb);
+        washing_machine.setContentDescription("Washing Machine");
+        washing_machine.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
+        gallery.addView(washing_machine);
+
+        ImageView couch = new ImageView(this);
+        couch.setImageResource(R.drawable.droid_thumb);
+        couch.setContentDescription("couch");
+        couch.setOnClickListener(view ->{addObject(Uri.parse("Couch.sfb"));});
+        gallery.addView(couch);
+
+
+        ImageView laptop = new ImageView(this);
+        laptop.setImageResource(R.drawable.laptop_thumb);
+        laptop.setContentDescription("laptop");
+        laptop.setOnClickListener(view ->{addObject( Uri.parse("Laptop.sfb"));});
+        gallery.addView(laptop);
 
         ImageView cabin = new ImageView(this);
         cabin.setImageResource(R.drawable.cabin_thumb);
@@ -243,23 +263,7 @@ public class MainActivity extends AppCompatActivity {
         igloo.setOnClickListener(view ->{addObject(Uri.parse("igloo.sfb"));});
         gallery.addView(igloo);
 
-        ImageView chair = new ImageView(this);
-        chair.setImageResource(R.drawable.chair_thumb);
-        chair.setContentDescription("Chair");
-        chair.setOnClickListener(view ->{addObject( Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"));});
-        gallery.addView(chair);
 
-        ImageView washing_machine = new ImageView(this);
-        washing_machine.setImageResource(R.drawable.washingmachine_thumb);
-        washing_machine.setContentDescription("Washing Machine");
-        washing_machine.setOnClickListener(view ->{addObject( Uri.parse("Clothes dryer.sfb"));});
-        gallery.addView(washing_machine);
-
-        ImageView laptop = new ImageView(this);
-        laptop.setImageResource(R.drawable.laptop_thumb);
-        laptop.setContentDescription("laptop");
-        laptop.setOnClickListener(view ->{addObject( Uri.parse("Laptop.sfb"));});
-        gallery.addView(laptop);
 
 
 
